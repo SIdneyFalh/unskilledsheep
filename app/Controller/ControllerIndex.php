@@ -2,16 +2,23 @@
 
 class ControllerIndex extends Controller
 {
-
-
-	public function getCool()
+	public function __construct()
 	{
-		echo 'cool';
+		parent::__construct();
+		$this->setView('index');
+		$this->setModel('index');
 	}
+
 
 	public function login()
 	{
+		$this->setMethod('login');
+		require($this->getModel().$this->getMethod().'.php');
+
+		require($this->getView().$this->getMethod().'.php');
+
 		
+
 	}
 
 

@@ -12,7 +12,7 @@ if(isset($_GET['page']))
 }
 else
 {
-    $page = 'index.getCool';
+    $page = 'index.login';
 }
 $page = explode('.', $page);
 switch ($page[0]) 
@@ -21,7 +21,7 @@ switch ($page[0])
         if ($page[1] == 'login')
         {
           $action = $page[1];  
-       /
+        }
         else
         {
             $action = 'login';
@@ -30,7 +30,7 @@ switch ($page[0])
         break;
     default:
         $controller = new ControllerIndex();
-        $action = 'getCool';
+        $action = 'login';
 }
     $controller->$action();
 
