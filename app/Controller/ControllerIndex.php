@@ -14,14 +14,24 @@ class ControllerIndex extends Controller
 	{
 		$this->setMethod('login');
 		require($this->getModel().$this->getMethod().'.php');
-		require($this->getView().$this->getMethod().'.php');
 		$login = new Login;
-		if(!empty($_POST))
+		if(empty($_SESSION['login']))
 		{
-				if(isOnline($_SESSION['login']))
-					$login->isOnline($login->auth($_POST['login'], $_POST['password']));
+			if(!empty($_POST))
+			{
+				$login->isOnline($login->auth($_POST['login'], $_POST['password']));
+			}
+			else
+			{
+				$login->redirect();
+			}
 
 		}
+		else
+		{
+			$login->redirect();
+		}
+		require($this->getView().$this->getMethod().'.php');
 
 		
 
