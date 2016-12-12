@@ -1,6 +1,6 @@
 <?php
 
-class ControllerIndex
+class ControllerIndex extends Controller
 {
 
 
