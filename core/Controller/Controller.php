@@ -9,5 +9,10 @@ class Controller
 	{
 		$this->$view = ROOT.'/app/Views/'.$view.'/';
 	}
+
+	public function setModel($model)
+	{
+		$this->$model = ROOT.'/app/Model/'.$model.'/';
+	}
 }
 ?>
