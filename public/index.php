@@ -46,7 +46,7 @@ if(Auth::isOnline())
                 {
                     $parametre = 1;
                 }
-                $parametre = $page[2];
+                $parametre = intval($page[2]);
             }
         break;
         default:

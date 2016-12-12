@@ -16,7 +16,8 @@ class Documents
 				FROM documents
 				WHERE categorie = :category
 				AND id = :id";
-		$exploit = $_SESSION['bdd']->query($req, array('id'=>$id, 'category'=>$category), Bdd::SINGLE_RES);
+		$document = $_SESSION['bdd']->query($req, array('id'=>$id, 'category'=>$category), Bdd::SINGLE_RES);
+		return $document;
 	}
 
 	public function existeDoc($id, $category)

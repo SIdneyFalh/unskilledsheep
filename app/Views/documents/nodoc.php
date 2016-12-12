@@ -1,1 +1,1 @@
-Il n'y a aucun <?= $category; ?>
+Ce document n'existe pas.
