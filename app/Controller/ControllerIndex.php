@@ -12,24 +12,20 @@ class ControllerIndex extends Controller
 
 	public function login()
 	{
+		$errors = false;
 		$this->setMethod('login');
 		require($this->getModel().$this->getMethod().'.php');
 		$login = new Login;
-		if(empty($_SESSION['login']))
+		if(!empty($_POST))
 		{
-			if(!empty($_POST))
+			if($login->connected($_POST['login'], $_POST['password']))
 			{
-				$login->isOnline($login->auth($_POST['login'], $_POST['password']));
+				Auth::redirect();
 			}
 			else
 			{
-				$login->redirect();
+				$errors = true;
 			}
-
-		}
-		else
-		{
-			$login->redirect();
 		}
 		require($this->getView().$this->getMethod().'.php');
 

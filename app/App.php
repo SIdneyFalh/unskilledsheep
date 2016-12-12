@@ -1,20 +1,19 @@
 <?php
 class App
 {
-	private static $instance;
+    private static $instance;
 
-	public static function getInstance()
-	{
+    public static function getInstance()
+    {
         if(is_null(self::$instance))
         {
-           	self::$instance = new App();
+            self::$instance = new App();
         }
         return self::$instance;
     }
 
-	public static function load($class)
+    public static function load($class)
     {
         require ROOT . '/app/Controller/'.$class.'.php';
     }
-
 }

@@ -1,8 +1,9 @@
 <?php
 	class Login
 	{
-		public function auth($login, $password)
+		public function ($login, $password)
 		{
+			$connect = false;
 			if(isset($password) && isset($login))
 			{
 				$req = "SELECT count(id) AS nb 
@@ -13,22 +14,12 @@
                 if (!empty($data->nb))
 				{
 					$_SESSION['login'] = $login;
-					return true;
-				}
-				else
-				{
-					return false;
+					$connect = true;
 				}
 			}
-			else
-			{
-				return false;
-			}
+			return $connect;
+				
 		}
 
-		public function redirect()
-		{
-				header('Location: /unskilledsheep/public/index.php?page=index.accueil');
-				exit;
-		}
+
 	}
