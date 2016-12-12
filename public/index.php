@@ -1,10 +1,11 @@
 <?php
 define('ROOT', dirname(__DIR__));
+define('TPL', ROOT.'/app/Views/templates/');
 require_once(ROOT.'/app/App.php');
 App::register();
 require_once(ROOT.'/config/Config.php');
 require_once(ROOT.'/core/Controller/Controller.php');
-require(ROOT.'/app/Views/templates/header.php');
+require(TPL.'/header.php');
 if(isset($_GET['page']))
 {
     $page = $_GET['page'];
@@ -24,6 +25,10 @@ switch ($page[0])
         $controller = new ControllerIndex();
         $action = 'getCool';
 }
-$controller->$action();
-require(ROOT.'/app/Views/templates/footer.php');
+if(method_exists($controller,$action))
+{
+    $controller->$action();
+}
+
+require(TPL.'/footer.php');
 ?>
