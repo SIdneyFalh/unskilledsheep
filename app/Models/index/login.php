@@ -1,7 +1,7 @@
 <?php
 	class Login
 	{
-		public function ($login, $password)
+		public function connected($login, $password)
 		{
 			$connect = false;
 			if(isset($password) && isset($login))

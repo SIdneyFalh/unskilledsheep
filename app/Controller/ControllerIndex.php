@@ -1,5 +1,4 @@
 <?php
-
 class ControllerIndex extends Controller
 {
 	public function __construct()
@@ -16,13 +15,13 @@ class ControllerIndex extends Controller
 		$this->setMethod('login');
 		require($this->getModel().$this->getMethod().'.php');
 		$login = new Login;
+		if(Auth::isOnline())
+		{
+			Auth::redirect();
+		}
 		if(!empty($_POST))
 		{
-			if($login->connected($_POST['login'], $_POST['password']))
-			{
-				Auth::redirect();
-			}
-			else
+			if(!$login->connected($_POST['login'], $_POST['password']))
 			{
 				$errors = true;
 			}
@@ -35,7 +34,17 @@ class ControllerIndex extends Controller
 
 	public function accueil()
 	{
-		echo 'ça marche';
+		$this->setMethod('accueil');
+	}
+
+	public function disconnect()
+	{
+		$this->setMethod('disconnect');
+		if(Auth::isOnline())
+		{
+			Auth::destroy();
+		}
+		require($this->getView().$this->getMethod().'.php');
 	}
 
 

@@ -12,7 +12,7 @@ class Auth
 		return self::$instance;
 	}
 
-	public function isOnline()
+	public static function isOnline()
 	{
 		$online = true;
 		if(empty($_SESSION['login']))
@@ -22,9 +22,14 @@ class Auth
 		return $online;
 	}
 
-	public function redirect()
+	public static function redirect()
 	{
 		header('Location: /unskilledsheep/public/index.php?page=index.accueil');
 		exit;
+	}
+
+	public static function destroy()
+	{
+		session_destroy();
 	}
 }

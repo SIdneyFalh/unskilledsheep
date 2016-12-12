@@ -15,36 +15,54 @@ else
     $page = 'index.login';
 
 }
+$parametre = '';
 if(Auth::isOnline())
 {
+
     $page = explode('.', $page);
     switch ($page[0])
     {
 	   case "index":
             $class = 'ControllerIndex';
-            if ($page[1] == 'login' || $page[1] == 'accueil')
+            $action = 'login';
+            if ($page[1] == 'login' 
+                || $page[1] == 'accueil'
+                || $page[1] == 'disconnect')
             {
-            $action = $page[1];  
+                $action = $page[1];  
             }
-            else
+        break;
+        case "documents":
+            $class = 'ControllerDocuments';
+            $action = 'exploits';
+            if ($page[1] == 'exploits')
             {
-                $action = 'login';
+                $action = $page[1];
+            }
+            elseif($page[1] == 'exploit')
+            {
+                $action = $page[1];
+                if(empty($page[2]))
+                {
+                    $parametre = 1;
+                }
+                $parametre = $page[2];
             }
         break;
         default:
             $class = 'ControllerIndex';
             $action = 'login';
         break;
-    }
-    App::load($class);
+    }    
 }
 else
 {
     $class = 'ControllerIndex';
     $action = 'login';
 }
+    App::load($class);
     $controller = new $class;
-    $controller->$action();
+    $controller->$action($parametre);
 
 require(TPL.'/footer.php');
 ?>
