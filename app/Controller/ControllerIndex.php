@@ -18,7 +18,8 @@ class ControllerIndex extends Controller
 		$login = new Login;
 		if(!empty($_POST))
 		{
-				$login->isOnline($login->auth($_POST['login'], $_POST['password']));
+				if(isOnline($_SESSION['login']))
+					$login->isOnline($login->auth($_POST['login'], $_POST['password']));
 
 		}
 

@@ -26,12 +26,9 @@
 			}
 		}
 
-		public function isOnline($bool)
+		public function redirect()
 		{
-			if($bool)
-			{
 				header('Location: /unskilledsheep/public/index.php?page=index.accueil');
 				exit;
-			}
 		}
 	}
