@@ -8,4 +8,11 @@ class ControllerIndex extends Controller
 	{
 		echo 'cool';
 	}
+
+	public function login()
+	{
+		
+	}
+
+
 }

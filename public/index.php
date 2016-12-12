@@ -18,13 +18,13 @@ $page = explode('.', $page);
 switch ($page[0]) 
 {
 	case "index":
-        if ($page[1] == 'getCool')
+        if ($page[1] == 'login')
         {
           $action = $page[1];  
-        }
+       /
         else
         {
-            $action = 'getCool';
+            $action = 'login';
         }
 		$controller = new ControllerIndex();
         break;
