@@ -18,17 +18,21 @@ $page = explode('.', $page);
 switch ($page[0]) 
 {
 	case "index":
+        if ($page[1] == 'getCool')
+        {
+          $action = $page[1];  
+        }
+        else
+        {
+            $action = 'getCool';
+        }
 		$controller = new ControllerIndex();
-        $action = $page[1];
         break;
     default:
         $controller = new ControllerIndex();
         $action = 'getCool';
 }
-if(method_exists($controller,$action))
-{
     $controller->$action();
-}
 
 require(TPL.'/footer.php');
 ?>
