@@ -2,22 +2,20 @@
 class App
 {
 	private static $instance;
-	
+
 	public static function getInstance()
 	{
-        if(is_null(self::$_instance))
+        if(is_null(self::$instance))
         {
-           	self::$_instance = new App();
+           	self::$instance = new App();
         }
-        return self::$_instance;
+        return self::$instance;
     }
 
-	public static function load()
+	public static function load($class)
     {
         session_start();
-        require ROOT . '/app/Autoloader.php';
-        App\Autoloader::register();
-        require ROOT . '/core/Autoloader.php';
-        Core\Autoloader::register();
+        require ROOT . '/app/Controller/'.$class.'.php';
     }
+
 }
