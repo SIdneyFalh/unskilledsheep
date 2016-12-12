@@ -26,10 +26,10 @@ switch ($page[0])
         {
             $action = 'login';
         }
-		$controller = new ControllerIndex();
+		$controller = new ControllerIndex;
         break;
     default:
-        $controller = new ControllerIndex();
+        $controller = new ControllerIndex;
         $action = 'login';
 }
     $controller->$action();
