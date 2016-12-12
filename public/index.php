@@ -2,7 +2,6 @@
 define('ROOT', dirname(__DIR__));
 define('TPL', ROOT.'/app/Views/templates/');
 require_once(ROOT.'/app/App.php');
-App::register();
 require_once(ROOT.'/config/Config.php');
 require_once(ROOT.'/core/Controller/Controller.php');
 require(TPL.'/header.php');
@@ -13,11 +12,13 @@ if(isset($_GET['page']))
 else
 {
     $page = 'index.login';
+
 }
 $page = explode('.', $page);
-switch ($page[0]) 
+switch ($page[0])
 {
 	case "index":
+        $class = 'ControllerIndex';
         if ($page[1] == 'login')
         {
           $action = $page[1];  
@@ -26,12 +27,14 @@ switch ($page[0])
         {
             $action = 'login';
         }
-		$controller = new ControllerIndex;
         break;
     default:
-        $controller = new ControllerIndex;
+        $class = 'ControllerIndex';
         $action = 'login';
+        break;
 }
+    App::load($class);
+    $controller = new $class;
     $controller->$action();
 
 require(TPL.'/footer.php');

@@ -14,8 +14,12 @@ class ControllerIndex extends Controller
 	{
 		$this->setMethod('login');
 		require($this->getModel().$this->getMethod().'.php');
-
 		require($this->getView().$this->getMethod().'.php');
+		if(!empty($_POST))
+		{
+			$login = new Login;
+			var_dump($login->auth($_POST['login'], $_POST['password']));
+		}
 
 		
 
