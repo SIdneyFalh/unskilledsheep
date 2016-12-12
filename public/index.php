@@ -19,7 +19,7 @@ switch ($page[0])
 {
 	case "index":
         $class = 'ControllerIndex';
-        if ($page[1] == 'login')
+        if ($page[1] == 'login' || $page[1] == 'accueil')
         {
           $action = $page[1];  
         }

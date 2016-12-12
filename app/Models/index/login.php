@@ -3,7 +3,7 @@
 	{
 		public function auth($login, $password)
 		{
-			if (isset($password) && isset($login))
+			if(isset($password) && isset($login))
 			{
 				$req = "SELECT count(id) AS nb 
 						FROM users 
@@ -23,6 +23,15 @@
 			else
 			{
 				return false;
+			}
+		}
+
+		public function isOnline($bool)
+		{
+			if($bool)
+			{
+				header('Location: /unskilledsheep/public/index.php?page=index.accueil');
+				exit;
 			}
 		}
 	}

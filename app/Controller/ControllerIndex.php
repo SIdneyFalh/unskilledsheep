@@ -15,14 +15,20 @@ class ControllerIndex extends Controller
 		$this->setMethod('login');
 		require($this->getModel().$this->getMethod().'.php');
 		require($this->getView().$this->getMethod().'.php');
+		$login = new Login;
 		if(!empty($_POST))
 		{
-			$login = new Login;
-			var_dump($login->auth($_POST['login'], $_POST['password']));
+				$login->isOnline($login->auth($_POST['login'], $_POST['password']));
+
 		}
 
 		
 
+	}
+
+	public function accueil()
+	{
+		echo 'ça marche';
 	}
 
 
