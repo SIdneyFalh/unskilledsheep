@@ -39,6 +39,7 @@ class ControllerIndex extends Controller
 	public function accueil()
 	{
 		$this->setMethod('accueil');
+		require($this->getView().$this->getMethod().'.php');
 	}
 
 	public function disconnect()
