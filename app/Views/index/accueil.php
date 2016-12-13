@@ -1,1 +1,3 @@
-Bienvenue sur le site d'UnskilledSheep !
+<div class="">
+	Bienvenue sur le site d'UnskilledSheep !
+</div>
