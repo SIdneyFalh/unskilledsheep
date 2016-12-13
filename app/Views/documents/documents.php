@@ -1,6 +1,6 @@
 <?= $category; ?>
 <?php foreach ($lesDocs as $leDoc): ?>
-	<?= $leDoc->titre; ?>
+	<a href="?page=documents.exploit.<?= $leDoc->id?>"><?= $leDoc->titre; ?></a>
 	<?= $leDoc->description; ?>
 	<?= $leDoc->contenu; ?>
 <?php endforeach; ?>

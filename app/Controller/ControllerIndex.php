@@ -17,13 +17,17 @@ class ControllerIndex extends Controller
 		$login = new Login;
 		if(Auth::isOnline())
 		{
-			Auth::redirect();
+			Auth::redirect('accueil');
 		}
 		if(!empty($_POST))
 		{
 			if(!$login->connected($_POST['login'], $_POST['password']))
 			{
 				$errors = true;
+			}
+			else
+			{
+				Auth::redirect('accueil');
 			}
 		}
 		require($this->getView().$this->getMethod().'.php');

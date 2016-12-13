@@ -22,9 +22,9 @@ class Auth
 		return $online;
 	}
 
-	public static function redirect()
+	public static function redirect($action)
 	{
-		header('Location: /unskilledsheep/public/index.php?page=index.accueil');
+		header('Location: /unskilledsheep/public/index.php?page=index.'.$action);
 		exit;
 	}
 

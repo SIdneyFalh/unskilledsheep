@@ -18,35 +18,54 @@ else
 $parametre = '';
 if(Auth::isOnline())
 {
-
+    require(TPL.'/menu.php');
     $page = explode('.', $page);
     switch ($page[0])
     {
 	   case "index":
             $class = 'ControllerIndex';
-            $action = 'login';
-            if ($page[1] == 'login' 
-                || $page[1] == 'accueil'
-                || $page[1] == 'disconnect')
+            $action = 'accueil';
+            if(empty($page[1]))
             {
-                $action = $page[1];  
+                $action = 'accueil';
             }
+            else
+            {
+                if ($page[1] == 'login' 
+                    || $page[1] == 'accueil'
+                    || $page[1] == 'disconnect')
+                {
+                    $action = $page[1];  
+                }
+            }
+
+
         break;
         case "documents":
             $class = 'ControllerDocuments';
             $action = 'exploits';
-            if ($page[1] == 'exploits')
+            if(empty($page[1]))
             {
-                $action = $page[1];
+                $action = 'exploits';
             }
-            elseif($page[1] == 'exploit')
+            else
             {
-                $action = $page[1];
-                if(empty($page[2]))
+                if ($page[1] == 'exploits')
                 {
-                    $parametre = 1;
+                    $action = $page[1];
                 }
-                $parametre = intval($page[2]);
+                elseif($page[1] == 'exploit')
+                {
+                    $action = $page[1];
+                    if(empty($page[2]))
+                    {
+                        $parametre = 1;
+                    }
+                    else
+                    {
+                        $parametre = intval($page[2]);
+                    }  
+                }
             }
         break;
         default:
