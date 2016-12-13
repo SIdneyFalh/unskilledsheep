@@ -2,6 +2,7 @@
 
 class ControllerDocuments extends Controller
 {
+	private $category;
 	public function __construct()
 	{
 		parent::__construct();
@@ -11,22 +12,22 @@ class ControllerDocuments extends Controller
 
 	public function exploits()
 	{
-		$category = 'exploit';
+		$this->setCategory('exploit');
 		$this->setMethod('documents');
 		require($this->getModel().$this->getMethod().'.php');
 		$documents = new Documents;
-		$lesDocs = $documents->listDocuments($category);
+		$lesDocs = $documents->listDocuments($this->getCategory());
 		require($this->getView().$this->getMethod().'.php');
 	}
 
-	public function exploit($parametre)
+	public function exploit($id)
 	{
-		$category = 'exploit';
+		$this->setCategory('exploit');
 		$this->setMethod('documents');
 		require($this->getModel().$this->getMethod().'.php');
 		$documents = new Documents;
-		$unExploit = $documents->getDocument($parametre, $category);
-		if($documents->existeDoc($parametre, $category))
+		$unExploit = $documents->getDocument($id, $this->getCategory());
+		if($documents->existeDoc($id, $this->getCategory()))
 		{
 			$this->setMethod('exploit');
 			require($this->getView().$this->getMethod().'.php');
@@ -36,5 +37,15 @@ class ControllerDocuments extends Controller
 			$this->setMethod('nodoc');
 			require($this->getView().$this->getMethod().'.php');
 		}
+	}
+
+	public function getCategory()
+	{
+		return $this->category;
+	}
+
+	public function setCategory($category)
+	{
+		$this->category = $category;
 	}
 }

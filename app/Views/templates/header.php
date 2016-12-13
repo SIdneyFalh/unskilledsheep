@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Unskilled Sheep</title>
+  <title><?= $titre; ?></title>
   <link rel="stylesheet" href="css/style.css">
   <script src="script.js"></script>
 </head>

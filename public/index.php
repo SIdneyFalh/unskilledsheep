@@ -1,11 +1,15 @@
 <?php
+
 define('ROOT', dirname(__DIR__));
 define('TPL', ROOT.'/app/Views/templates/');
+
 require_once(ROOT.'/app/App.php');
 require_once(ROOT.'/core/Auth/Auth.php');
 require_once(ROOT.'/config/Config.php');
 require_once(ROOT.'/core/Controller/Controller.php');
+
 require(TPL.'/header.php');
+
 if(isset($_GET['page']))
 {
     $page = $_GET['page'];
@@ -13,12 +17,13 @@ if(isset($_GET['page']))
 else
 {
     $page = 'index.login';
-
 }
+
 $parametre = '';
 if(Auth::isOnline())
 {
     require(TPL.'/menu.php');
+    
     $page = explode('.', $page);
     switch ($page[0])
     {
