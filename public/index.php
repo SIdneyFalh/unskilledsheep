@@ -9,6 +9,7 @@ require_once(ROOT.'/config/Config.php');
 require_once(ROOT.'/core/Controller/Controller.php');
 
 require(TPL.'/header.php');
+require(TPL.'/subheader.php');
 
 if(isset($_GET['page']))
 {

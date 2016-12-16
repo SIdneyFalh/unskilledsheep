@@ -1,4 +1,6 @@
-<div class="">
+<div class="soustitrebleu">
 	Vous êtes bien deconnecté.
 </div>
-<a href="/unskilledsheep/public/">Accueil</a>
+<div class="bleu">
+	<a class="link" href="/unskilledsheep/public/">Accueil</a>
+</div>

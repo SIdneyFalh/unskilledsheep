@@ -1,0 +1,131 @@
+html, body
+{
+	margin:0;
+	padding:0;
+}
+
+#content
+{
+	width:600px;
+	height:400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* Pour les erreurs */
+
+.error
+{
+	color:#e74c3c;
+	font-weight:bold;
+}
+/* pour les tableaux */
+
+td.titre
+{
+
+	font-weight:bold;
+}
+td
+{	
+	text-align:center;
+	padding-left:40px;
+	padding-right:40px;
+	border:0px;
+	display:inline;
+}
+/* Pour le menu */
+
+a.link
+{
+	text-decoration:none;
+	color:#4aa3df;
+}
+.exploit
+{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+label
+{
+	font-weight:bold;
+}
+
+ul#menu li 
+{ 
+	display:inline;
+	padding:0 0.5em;
+}
+ul#menu 
+{
+	width:600px;
+	height:25px;
+	list-style-type:none;
+}
+li.g
+{
+	float:left;
+}
+li.d
+{
+	float:right;
+}
+/* titres */
+.soustitrebleu
+{
+background-color:#4aa3df;
+font-weight:bold;
+padding:15px;
+color:#FFFFFF;
+}
+.titrerouge
+{
+background-color:#e74c3c;
+font-weight:bold;
+padding:15px;
+color:#FFFFFF;
+text-align:center;
+font-size:200%;
+}
+.soustitrerouge
+{
+background-color:#e74c3c;
+font-weight:bold;
+padding:15px;
+color:#FFFFFF;
+}
+
+.soustitrejaune
+{
+background-color:#f1c40f;
+font-weight:bold;
+padding:15px;
+color:#FFFFFF;
+}
+/* Div */
+.bleu
+{
+border-color:#4aa3df;
+border-width:5px;
+border-style:solid;
+padding:15px;
+margin-bottom:50px;
+background-color:#FFFFFF;
+}
+.jaune
+{
+border-color:#f1c40f;
+border-width:5px;
+border-style:solid;
+padding:15px;
+margin-bottom:50px;
+background-color:#FFFFFF;
+}
+.rouge
+{
+border-color:#e74c3c;
+border-width:5px;
+border-style:solid;
+padding:15px;
+margin-bottom:50px;
+background-color:#FFFFFF;
+}
