@@ -11,8 +11,7 @@ html, body
 
 #content
 {
-	width:600px;
-	height:400px;
+	width: 60%;
 	margin-left:auto;
 	margin-right:auto;
 
@@ -121,7 +120,6 @@ ul#menu li
 }
 ul#menu 
 {
-	width:600px;
 	height:25px;
 	list-style-type:none;
 }
@@ -140,7 +138,6 @@ background-color:#4aa3df;
 font-weight:bold;
 padding:15px;
 color:#FFFFFF;
-width:600px;
 border-color:#4aa3df;
 border-width:5px;
 border-style:solid;
@@ -178,7 +175,6 @@ border-width:5px;
 border-style:solid;
 padding:15px;
 background-color:#FFFFFF;
-width:600px;
 }
 .jaune
 {
