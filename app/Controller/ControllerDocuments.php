@@ -30,13 +30,22 @@ class ControllerDocuments extends Controller
 		if($documents->existeDoc($id, $this->getCategory()))
 		{
 			$this->setMethod('exploit');
-			require($this->getView().$this->getMethod().'.php');
 		}
 		else
 		{
 			$this->setMethod('nodoc');
-			require($this->getView().$this->getMethod().'.php');
 		}
+		require($this->getView().$this->getMethod().'.php');
+	}
+
+	public function add()
+	{
+		$this->setCategory('exploit');
+		$this->setMethod('documents');
+		require($this->getModel().$this->getMethod().'.php');
+		$documents = new Documents;
+		$this->setMethod('add');
+		require($this->getView().$this->getMethod().'.php');
 	}
 
 	public function getCategory()

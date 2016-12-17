@@ -29,4 +29,9 @@ class Documents
 		$data = $_SESSION['bdd']->query($req ,array('id'=>$id, 'category'=>$category),Bdd::SINGLE_RES);
 		return !empty($data->nb);
 	}
+
+	public function addDoc()
+	{
+		$req = "INSERT INTO"
+	}
 }
