@@ -32,6 +32,9 @@ class Documents
 
 	public function addDoc()
 	{
-		$req = "INSERT INTO"
+		$req = "INSERT INTO documents (titre, description, contenu, categorie)
+				VALUES (:titre, :description, :contenu, :category)";
+		$data = $_SESSION['bdd']->exec($req, array('titre'=>$titre, 'description'=>$description, 'contenu'=>$contenu, 'category'=>$category));
+		
 	}
 }

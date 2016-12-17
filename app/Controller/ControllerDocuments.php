@@ -44,6 +44,10 @@ class ControllerDocuments extends Controller
 		$this->setMethod('documents');
 		require($this->getModel().$this->getMethod().'.php');
 		$documents = new Documents;
+		if(!empty($_POST))
+		{
+			
+		}
 		$this->setMethod('add');
 		require($this->getView().$this->getMethod().'.php');
 	}
