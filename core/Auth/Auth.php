@@ -2,6 +2,7 @@
 class Auth
 {
 	private static $instance;
+	private static $dossier='/unskilledsheep/public/';
 
 	public static function getInstance()
 	{
@@ -24,7 +25,7 @@ class Auth
 
 	public static function redirect($action)
 	{
-		header('Location: /unskilledsheep/public/index.php?page=index.'.$action);
+		header('Location: '.$dossier.'index.php?page=index.'.$action);
 		exit;
 	}
 
