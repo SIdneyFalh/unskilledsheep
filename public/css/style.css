@@ -2,6 +2,11 @@ html, body
 {
 	margin:0;
 	padding:0;
+	background-image: url("../image/background.jpg");
+	background-repeat: repeat;
+	background-position: left;
+	background-attachment: fixed;
+	background-size:cover;
 }
 
 #content
@@ -10,6 +15,7 @@ html, body
 	height:400px;
 	margin-left:auto;
 	margin-right:auto;
+
 }
 /* Pour les erreurs */
 
@@ -40,11 +46,19 @@ a.link
 	text-decoration:none;
 	color:#4aa3df;
 }
-.exploit
+
+.description
 {
 	margin-top:20px;
 	margin-bottom:20px;
 }
+
+.contenu
+{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
 label
 {
 	font-weight:bold;
