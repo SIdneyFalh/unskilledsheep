@@ -18,6 +18,16 @@ html, body
 
 }
 /* Pour les erreurs */
+code
+{
+	overflow:scroll;
+	display: flex;
+	overflow-y: hidden;
+}
+.center
+{
+	text-align:center;
+}
 
 .error
 {
@@ -47,7 +57,47 @@ a.link
 	color:#4aa3df;
 }
 
+.button 
+{
+	background-color:#4aa3df; 
+	border-color:#4aa3df;
+	border-width:5px;
+	border-style:solid;
+	color:white;
+	padding:15px 32px;
+	text-align:center;
+	text-decoration:none;
+	font-size:16px;
+}
+
+.input
+{
+	border-color:#4aa3df;
+	border-width:5px;
+	border-style:solid;
+	color:#4aa3df;
+	width:100px;
+	height:20px;
+	padding:15px 32px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:16px;
+}
+
 .description
+{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.lien
+{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.titre
 {
 	margin-top:20px;
 	margin-bottom:20px;
