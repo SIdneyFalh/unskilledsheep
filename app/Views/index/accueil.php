@@ -1,7 +1,7 @@
-<div class="soustitrerouge">
+<div class="soustitrebleu">
 	Bienvenue sur le site d'UnskilledSheep !
 </div>
-<div class="rouge">
+<div class="bleu">
 	Ici vous pouvez retrouver:
 	<ul>
 		<li> Des exploits</li>
