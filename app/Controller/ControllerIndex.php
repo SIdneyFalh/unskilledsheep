@@ -21,19 +21,17 @@ class ControllerIndex extends Controller
 		}
 		if(!empty($_POST))
 		{
-			if(!$login->connected($_POST['login'], $_POST['password']))
-			{
-				$errors = true;
-			}
-			else
+			if($login->connected($_POST['login'], $_POST['password']))
 			{
 				Auth::redirect('accueil');
 			}
+			else
+			{
+				$errors = true;
+			}
+
 		}
 		require($this->getView().$this->getMethod().'.php');
-
-		
-
 	}
 
 	public function accueil()

@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 define('ROOT', dirname(__DIR__));
 define('TPL', ROOT.'/app/Views/templates/');
 
@@ -37,12 +37,16 @@ if(Auth::isOnline())
             }
             else
             {
-                if ($page[1] == 'login' 
-                    || $page[1] == 'accueil'
+                if ($page[1] == 'login')
+                {
+                    $action = 'accueil';
+                }
+                elseif ($page[1] == 'accueil'
                     || $page[1] == 'disconnect')
                 {
                     $action = $page[1];  
                 }
+
             }
 
 
@@ -90,4 +94,5 @@ else
     $controller->$action($parametre);
 
 require(TPL.'/footer.php');
+ob_end_flush();
 ?>
