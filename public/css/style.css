@@ -17,7 +17,7 @@ html, body
 
 }
 
-label
+.add
 {
 	display:block;
 	width:150px;
@@ -105,6 +105,50 @@ a.linklogo
 	display:inline-block;
 	font-size:16px;
 }
+
+.inputadd
+{
+	border-color:#4aa3df;
+	border-width:5px;
+	border-style:solid;
+	color:#4aa3df;
+	width:150px;
+	height:50px;
+	padding:15px 32px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+.area
+{
+	border-color:#4aa3df;
+	border-width:5px;
+	border-style:solid;
+	color:#4aa3df;
+	width:150px;
+	height:50px;
+	padding:15px 32px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+.type
+{
+	border-color:#4aa3df;
+	border-width:5px;
+	border-style:solid;
+	color:#4aa3df;
+	width:100px;
+	height:50px;
+	padding:15px 32px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+}
+
+
 
 .description
 {
