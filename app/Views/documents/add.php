@@ -8,11 +8,11 @@
     </div>
     <?php endif; ?>
 	<form name="add" method="POST" ation=""> 
-		<label class="add">Titre: </label><input class="inputadd" type="text" value="" placeholder="Titre" name="titre"></br>
-		<label class="add">Description: </label><textarea class="area" name="description" placeholder="Description"></textarea></br>
-		<label class="add">Contenu: </label><textarea class="area" name="contenu" placeholder="Contenu"></textarea></br>
-		<label class="add">Catégorie: </label><input class="inputadd" type="text" value="" placeholder="Catégorie" name="categorie"></br>
-		<label class="add">Type: </label><select class="type" name="type">
+		<label class="add">Titre: </label><input class="input" type="text" value="" placeholder="Titre" name="titre"></br>
+		<label class="add">Description: </label><textarea class="input" name="description" placeholder="Description"></textarea></br>
+		<label class="add">Contenu: </label><textarea class="input" name="contenu" placeholder="Contenu"></textarea></br>
+		<label class="add">Catégorie: </label><input class="input" type="text" value="" placeholder="Catégorie" name="categorie"></br>
+		<label class="add">Type: </label><select class="input" name="type">
 			<?php foreach ($lesTypes as $leType): ?>
 				<option value="<?= $leType->id; ?>"><?= Secu::xss($leType->libelle); ?></option>
 			<?php endforeach; ?>
