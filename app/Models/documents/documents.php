@@ -30,11 +30,22 @@ class Documents
 		return !empty($data->nb);
 	}
 
-	public function addDoc()
+	public function addDoc($titre, $description, $contenu, $category)
 	{
-		$req = "INSERT INTO documents (titre, description, contenu, categorie)
-				VALUES (:titre, :description, :contenu, :category)";
-		$data = $_SESSION['bdd']->exec($req, array('titre'=>$titre, 'description'=>$description, 'contenu'=>$contenu, 'category'=>$category));
-		
+		$added = false;
+		$login = $_SESSION['login'];
+		$req = "SELECT id
+				FROM users
+				WHERE login = :login";
+		$data = $_SESSION['bdd']->query($req ,array('login'=>$login),Bdd::SINGLE_RES);
+		$id = $data->id;
+		$req = "INSERT INTO documents (titre, description, contenu, categorie, uid)
+				VALUES (:titre, :description, :contenu, :category, :uid)";
+		$data = $_SESSION['bdd']->exec($req, array('titre'=>$titre, 'description'=>$description, 'contenu'=>$contenu, 'category'=>$category, 'uid'=>$id));
+		if(!empty($data))
+		{
+			$added = true;
+		}
+		return $added;
 	}
 }

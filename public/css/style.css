@@ -17,6 +17,14 @@ html, body
 
 }
 
+label
+{
+	display:block;
+	width:150px;
+	float:left;
+
+}
+
 .logo
 {
 
@@ -40,6 +48,7 @@ code
 {
 	color:#e74c3c;
 	font-weight:bold;
+	margin:1px;
 }
 /* pour les tableaux */
 

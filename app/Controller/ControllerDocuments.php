@@ -40,13 +40,24 @@ class ControllerDocuments extends Controller
 
 	public function add()
 	{
+		$errors = false;
 		$this->setCategory('exploit');
 		$this->setMethod('documents');
 		require($this->getModel().$this->getMethod().'.php');
 		$documents = new Documents;
 		if(!empty($_POST))
 		{
-			
+			if($_POST['categorie'] === 'exploit')
+			{
+				if(!$documents->addDoc($_POST['titre'], $_POST['description'], $_POST['contenu'], $_POST['categorie']))
+				{
+					$errors = true;
+				}
+			}
+			else
+			{
+				$errors = true;
+			}
 		}
 		$this->setMethod('add');
 		require($this->getView().$this->getMethod().'.php');

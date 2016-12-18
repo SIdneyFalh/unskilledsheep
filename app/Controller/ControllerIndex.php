@@ -34,6 +34,31 @@ class ControllerIndex extends Controller
 		require($this->getView().$this->getMethod().'.php');
 	}
 
+	public function register()
+	{
+		$this->setMethod('register');
+		require($this->getModel().$this->getMethod().'.php');
+		$register = new Register;
+		if(Auth::isOnline())
+		{
+			Auth::redirect('accueil');
+		}
+		if(!empty($_POST))
+		{
+			if($register->regist($_POST['login'], $_POST['password']))
+			{
+				Auth::redirect('accueil');
+			}
+			else
+			{
+				$errors = true;
+			}
+
+		}
+		require($this->getView().$this->getMethod().'.php');
+
+	}
+
 	public function accueil()
 	{
 		$this->setMethod('accueil');

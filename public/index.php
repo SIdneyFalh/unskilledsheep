@@ -6,6 +6,7 @@ define('TPL', ROOT.'/app/Views/templates/');
 require_once(ROOT.'/app/App.php');
 require_once(ROOT.'/core/Auth/Auth.php');
 require_once(ROOT.'/config/Config.php');
+require_once(ROOT.'/core/Secu/Secu.php');
 require_once(ROOT.'/core/Controller/Controller.php');
 
 require(TPL.'/header.php');
@@ -21,11 +22,10 @@ else
 }
 
 $parametre = '';
+$page = explode('.', $page);
 if(Auth::isOnline())
 {
     require(TPL.'/menu.php');
-    
-    $page = explode('.', $page);
     switch ($page[0])
     {
 	   case "index":
@@ -60,7 +60,8 @@ if(Auth::isOnline())
             }
             else
             {
-                if ($page[1] == 'exploits')
+                if ($page[1] == 'exploits' 
+                || $page[1] == 'add')
                 {
                     $action = $page[1];
                 }
@@ -86,8 +87,16 @@ if(Auth::isOnline())
 }
 else
 {
-    $class = 'ControllerIndex';
-    $action = 'login';
+    if ($page[0] == 'index' && $page[1] == 'register')
+    {
+        $class = 'ControllerIndex';
+        $action = $page[1];
+    }
+    else
+    {
+        $class = 'ControllerIndex';
+        $action = 'login';
+    }
 }
     App::load($class);
     $controller = new $class;
