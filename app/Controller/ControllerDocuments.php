@@ -45,11 +45,12 @@ class ControllerDocuments extends Controller
 		$this->setMethod('documents');
 		require($this->getModel().$this->getMethod().'.php');
 		$documents = new Documents;
+		$lesTypes = $documents->listTypes();
 		if(!empty($_POST))
 		{
 			if($_POST['categorie'] === 'exploit')
 			{
-				if(!$documents->addDoc($_POST['titre'], $_POST['description'], $_POST['contenu'], $_POST['categorie']))
+				if(!$documents->addDoc($_POST['titre'], $_POST['description'], $_POST['contenu'], $_POST['categorie'], $_POST['type']))
 				{
 					$errors = true;
 				}
