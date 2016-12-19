@@ -11,12 +11,26 @@ html, body
 
 #content
 {
+
 	width: 60%;
 	margin-left:auto;
 	margin-right:auto;
+	padding-bottom: 100px;
 
 }
+#footer
+{
+	height:50px;
+	width:100%;
+	background-color:#FFFFFF;
+	bottom:0; 
+	font-size:12px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	border-top:5px #f1c40f solid;
 
+}
 .add
 {
 	display:block;
