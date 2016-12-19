@@ -19,6 +19,7 @@ html, body
 	padding-bottom: 100px;
 
 }
+
 #footer
 {
 	height:50px;
@@ -52,7 +53,6 @@ html, body
 code
 {
 	overflow:scroll;
-	display: flex;
 	overflow-y: hidden;
 }
 .center
