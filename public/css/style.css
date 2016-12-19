@@ -30,6 +30,7 @@ html, body
 	margin-left:auto;
 	margin-right:auto;
 	border-top:5px #f1c40f solid;
+	position:fixed;
 
 }
 .add
