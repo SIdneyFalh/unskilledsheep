@@ -7,5 +7,6 @@
   <link rel="stylesheet" href="css/prism.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <script src="js/prism.js"></script>
+  <script src="js/bootstrap.js"></script>
 </head>
 <body>
