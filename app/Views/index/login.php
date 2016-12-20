@@ -5,10 +5,11 @@
         Identifiants incorrects
     </div>
     <?php endif; ?>
-	<form name="login" method="POST" action="">
-		<input class="input" type="text" value="" placeholder="Login" name="login">
-		<input class="input" type="password" value="" placeholder="Password" name="password">
-		<input type="submit" class="button" value="send" name="send">
+
+	<form name="login" method="POST" action="" class="form-inline">
+		<input class="form-control" type="text" value="" placeholder="Login" name="login">
+		<input class="form-control" type="password" value="" placeholder="Password" name="password">
+		<input type="submit" class="btn btn-default" value="send" name="send">
 		<a class="link" href="?page=index.register">Inscription</a>
 	</form>
 </div>
