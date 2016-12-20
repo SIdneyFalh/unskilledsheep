@@ -25,10 +25,8 @@ class Auth
 
 	public static function redirect($action)
 	{
-		ob_start();
 		header('Location: '.$dossier.'?page=index.'.$action);
 		exit;
-		ob_end_clean();
 	}
 
 	public static function destroy()
