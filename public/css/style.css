@@ -12,12 +12,10 @@ html, body
 
 #content
 {
-
 	width: 60%;
 	margin-left:auto;
 	margin-right:auto;
 	padding-bottom: 100px;
-
 }
 
 #footer
@@ -34,13 +32,6 @@ html, body
 	position:fixed;
 
 }
-.add
-{
-	display:block;
-	width:150px;
-	float:left;
-
-}
 
 .logo
 {
@@ -49,12 +40,13 @@ html, body
 	margin: 1%;
 	margin-bottom:0;
 }
-/* Pour les erreurs */
+
 code
 {
 	overflow:scroll;
 	overflow-y: hidden;
 }
+
 .center
 {
 	text-align:center;
@@ -66,21 +58,7 @@ code
 	font-weight:bold;
 	margin:1px;
 }
-/* pour les tableaux */
 
-td.titre
-{
-
-	font-weight:bold;
-}
-td
-{	
-	text-align:center;
-	padding-left:40px;
-	padding-right:40px;
-	border:0px;
-	display:inline;
-}
 /* Pour le menu */
 
 a.link
@@ -89,38 +67,15 @@ a.link
 	color:#4aa3df;
 }
 
+a.link:hover
+{
+	text-decoration:none;
+}
+
 a.linklogo
 {
 	text-decoration:none;
 }
-
-.button 
-{
-	background-color:#4aa3df; 
-	border-color:#4aa3df;
-	border-width:5px;
-	border-style:solid;
-	color:white;
-	padding:15px 32px;
-	text-align:center;
-	text-decoration:none;
-	font-size:16px;
-}
-
-.input
-{
-	border-color:#4aa3df;
-	border-width:5px;
-	border-style:solid;
-	color:#4aa3df;
-	width:100px;
-	height:20px;
-	padding:15px 32px;
-	text-decoration:none;
-	display:inline-block;
-	font-size:12px;
-}
-
 
 
 .description
@@ -152,25 +107,6 @@ label
 	font-weight:bold;
 }
 
-ul#menu li 
-{ 
-	display:inline;
-	padding:0 0.5em;
-}
-ul#menu 
-{
-	height:25px;
-	list-style-type:none;
-	margin-top:0;
-}
-li.g
-{
-	float:left;
-}
-li.d
-{
-	float:right;
-}
 /* titres */
 .soustitrebleu
 {
