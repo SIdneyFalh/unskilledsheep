@@ -12,6 +12,9 @@
 						voir plus
 					</a>
   				</div>
+  				<div class="panel-footer">
+  					Auteur: 
+  				</div>
 			</div>
 		<?php endforeach; ?>
 </div>
