@@ -14,7 +14,7 @@ class Documents
 	public function getDocument($id, $category)
 	{
 		$req = "SELECT login, titre, description, contenu, libelle
-				FROM documents, type 
+				FROM documents
 				INNER JOIN type ON type.id = documents.tid
 				INNER JOIN users ON documents.uid = users.id
 				WHERE categorie = :category
