@@ -13,10 +13,11 @@ class Documents
 
 	public function getDocument($id, $category)
 	{
-		$req = "SELECT titre, description, contenu, libelle
-				FROM documents, type
-				WHERE type.id = tid
-				AND categorie = :category
+		$req = "SELECT login, titre, description, contenu, libelle
+				FROM documents, type 
+				INNER JOIN type ON type.id = documents.tid
+				INNER JOIN users ON documents.uid = users.id
+				WHERE categorie = :category
 				AND documents.id = :id";
 		$document = $_SESSION['bdd']->query($req, array('id'=>$id, 'category'=>$category), Bdd::SINGLE_RES);
 		return $document;
