@@ -5,7 +5,7 @@ class Documents
 	{
 		$req = "SELECT documents.id, login, titre, description, contenu
 				FROM documents
-				INNER JOIN users ON uid = users.id
+				INNER JOIN users ON documents.uid = users.id
 				WHERE categorie = :category";
 		$lesDocs = $_SESSION['bdd']->query($req, array('category'=>$category));
 		return $lesDocs;

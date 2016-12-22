@@ -8,12 +8,12 @@
   					Titre: <?= Secu::xss($leDoc->titre); ?>
   				</div>
   				<div class="panel-body">
-    				Lien: <a class="link" href="?page=documents.<?= $this->getCategory(); ?>.<?= $leDoc->id?>">
+    				Lien: <a class="link" href="?page=documents.<?= $this->getCategory(); ?>.<?= $leDoc->id; ?>">
 						voir plus
 					</a>
   				</div>
   				<div class="panel-footer">
-  					Auteur: 
+  					Auteur: <?= Secu::xss($leDoc->login); ?>
   				</div>
 			</div>
 		<?php endforeach; ?>
