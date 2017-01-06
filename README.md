@@ -1,5 +1,5 @@
 # unskilledsheep
 
-*Code source du site unskilledsheep
+*code source du site unskilledsheep
 
 
