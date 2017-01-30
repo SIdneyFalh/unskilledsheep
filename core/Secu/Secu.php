@@ -43,4 +43,14 @@ class Secu
 		}
 		return $result;
 	}
+
+	public static function verifReferer($ref)
+	{
+		$result = false;
+		if ($_SERVER['HTTP_REFERER'] === $ref)
+		{
+			$result = true;
+		}
+		return $result;
+	}
 }
