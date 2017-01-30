@@ -21,4 +21,26 @@ class Secu
 	{
 		return hash('sha512', $str);
 	}
+
+	public static function token()
+	{
+		$token = uniqid(rand(), true);	
+		$_SESSION['token'] = $token;
+		$_SESSION['token_time'] = time();
+		return $token;
+	}
+
+	public static function verifToken($token)
+	{
+		$result = false;
+		if ($token == $_SESSION['token'])
+		{
+			$oldTime = time() - (15*60);
+			if($_SESSION['token_time'] >= $oldTime)
+			{
+				$result = true;
+			}
+		}
+		return $result;
+	}
 }

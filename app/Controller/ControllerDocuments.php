@@ -43,6 +43,7 @@ class ControllerDocuments extends Controller
 		$errors = false;
 		$this->setCategory('exploit');
 		$this->setMethod('documents');
+		$tk = Secu::token();
 		require($this->getModel().$this->getMethod().'.php');
 		$documents = new Documents;
 		$lesTypes = $documents->listTypes();
@@ -50,10 +51,17 @@ class ControllerDocuments extends Controller
 		{
 			if($_POST['categorie'] === 'exploit')
 			{
-				if(!$documents->addDoc($_POST['titre'], $_POST['description'], $_POST['contenu'], $_POST['categorie'], $_POST['type']))
-				{
-					$errors = true;
-				}
+					if (Secu::verifToken($tk))
+					{
+						if(!$documents->addDoc($_POST['titre'], $_POST['description'], $_POST['contenu'], $_POST['categorie'], $_POST['type']))
+						{
+							$errors = true;
+						}
+					}
+					else
+					{
+						$errors = true;
+					}
 			}
 			else
 			{

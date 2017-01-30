@@ -32,6 +32,7 @@
 				<?php endforeach; ?>
 			</select>
 		</div>
+		<input type="hidden" name="csrf" value="<?= $tk; ?>">
 		<input class="btn btn-primary" type="submit" name="send" value="send">
 	</form>
 </div>
