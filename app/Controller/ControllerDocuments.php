@@ -43,7 +43,6 @@ class ControllerDocuments extends Controller
 		$errors = false;
 		$this->setCategory('exploit');
 		$this->setMethod('documents');
-		$tk = Secu::token();
 		require($this->getModel().$this->getMethod().'.php');
 		$documents = new Documents;
 		$lesTypes = $documents->listTypes();
@@ -51,7 +50,7 @@ class ControllerDocuments extends Controller
 		{
 			if($_POST['categorie'] === 'exploit')
 			{
-					if (Secu::verifToken($tk))
+					if (Secu::verifToken($_POST['csrf']))
 					{
 						if(!$documents->addDoc($_POST['titre'], $_POST['description'], $_POST['contenu'], $_POST['categorie'], $_POST['type']))
 						{
@@ -68,6 +67,7 @@ class ControllerDocuments extends Controller
 				$errors = true;
 			}
 		}
+		$tk = Secu::token();
 		$this->setMethod('add');
 		require($this->getView().$this->getMethod().'.php');
 	}
